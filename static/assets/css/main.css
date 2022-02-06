@@ -1,0 +1,342 @@
+/*
+ * Author: Carlos Alvarez
+ * URL: http://alvarez.is
+ *
+ * Project Name: STANLEY - Free Bootstrap 3 Theme
+ * Version: 1.0
+ * URL: http://blacktie.co
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Encode+Sans:wght@300;400;500&family=The+Nautigal:wght@700&display=swap');
+
+body {
+  	background-color: #ffffff;
+  	font-family: 'Encode Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: #333;
+}
+
+h1 {
+	font-size: 35px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+
+
+/* Paragraph & Typographic */
+p {
+    line-height: 28px;
+    margin-top: 05px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.centered {
+    text-align: center;
+}
+
+/* Links */
+a {
+    color: #03a9f4;
+    word-wrap: break-word;
+
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a:hover,
+a:focus {
+    color: #7b7b7b;
+    text-decoration: none;
+    outline: 0;
+}
+
+a:before,
+a:after {
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+ hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+.navbar {
+	text-transform: uppercase;
+	margin-bottom: 0px;
+}
+
+.navbar-inverse {
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.navbar-inverse {
+	background-color: #03a9f4;
+    border-color: #0785be;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+	color: #222222;
+}
+
+.navbar-brand {
+	font-weight: 700;
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+.navbar-inverse .navbar-brand {
+	color: white;
+    font-family: 'The Nautigal', cursive;
+    text-transform: capitalize;
+    font-size: 50px;
+    padding: 0;
+}
+.logoImg {
+	height: 45px;
+    width: auto;
+    vertical-align: top;
+    padding-top: 4px;
+
+}
+.logoTxt {
+	display: inline-block;
+    padding: 15px 15px;
+}
+.navbar-inverse .navbar-toggle {
+	border-color: transparent;
+}
+
+.progress-bar-theme {
+  background-color: #1abc9c;
+}
+
+
+/* Helpers */
+
+.mt {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.pt {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+
+/* +++++ WRAP SECTIONS +++++ */
+
+#ww {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	background-color: #f2f2f2;
+}
+
+
+#footer {
+	background-color: #4e4e4e;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+#footer p {
+	color: white;
+}
+
+#footer h4 {
+	color: white;
+	text-transform: uppercase;
+	padding-bottom: 20px;
+}
+
+
+/* +++++ Color Wraps / Blog Page +++++ */
+
+#grey {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-color: #f2f2f2;
+}
+
+#white {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-color: #ffffff;
+}
+.wordCount {
+	display: none;
+}
+.wordCount .count{
+	font-weight: bold;
+}
+
+
+/* Blog Date*/
+bd {
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #d2d2d2;
+	font-weight: 700;
+}
+
+/* Blog Author*/
+ba {
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+/* Blog Quote */
+.bq {
+	font-size: 22px;
+	padding-top: 30px;
+}
+
+/* Blog Tags */
+bt {
+	font-size: 12px;
+}
+
+/* glyphicon Configuration */
+
+.glyphicon {
+	font-size: 40px;
+	color: #1abc9c;
+}
+
+/* Copyrights */
+
+#copyrights {
+  background: #444;
+  padding: 20px 0;
+  text-align: center;
+}
+
+#copyrights p {
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+#copyrights a {
+  color: #03a9f4;
+}
+
+.credits {
+  color: #999;
+}
+textarea.inputStr {
+	min-height: 4030px;
+    border: 1px dotted #ccc;
+    font-size: 16px;
+}
+.leftColumn {
+    border-right: 1px dotted #bbb;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    min-height: 500px;
+}
+.rightColumn {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    min-height: 500px;
+}
+.summaryContent {
+	display: block;
+    border: 1px dotted #bbb;
+    padding: 5px 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+.methodLabel {
+
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left: 1px solid #ccc;
+    margin-left: 10px;
+    font-size: 13px;
+    vertical-align: middle;
+    line-height: 23px;
+
+}
+.methodInput {
+	width: 150px;
+    display: inline;
+    font-size: 12px;
+    height: 25px;
+    padding: 2px;
+    line-height: 12px;
+    vertical-align: top;
+    margin-bottom: 5px;
+}
+
+.loadingDiv {
+	display: none;
+	width: 120px;
+    height: 120px;
+    margin: auto;
+    padding-top: calc(50% - 160px);
+    text-align: center;
+    font-size: 1.2em;
+}
+.loadingDiv .loadingGif{
+	
+}
+.loadingDiv .loadingGif img{
+	width: 80px;
+    height: 80px;
+    opacity: 0.5;
+    margin-bottom: 10px;
+}
+.loadingDiv .loadingText {
+	/*font-size: 16px;*/
+}
+.flexCol {
+	display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    min-height: 500px;
+}
+.flex1 {
+	flex: 1;
+}
+.wordCount {
+	flex: 0 1 30px;
+}
+.btnsRow {
+	flex: 0 1 50px;
+}
+#inputForm {
+	width: 100%;
+	height: 100%;
+}

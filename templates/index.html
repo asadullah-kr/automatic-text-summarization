@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Automatic Text Summarizer">
+    <meta name="author" content="Asadullah Khan">
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'assets/ico/favicon.ico') }}">
+
+    <title>Automatic Text Summarizer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename = 'assets/css/bootstrap.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename = 'assets/css/main.css') }}" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<!-- Static navbar -->
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+             <a class="navbar-brand" href="/">
+                <img class="logoImg" title="Automatic Text Summarizer" src="{{ url_for('static', filename = 'assets/images/summarize_logo.png') }}" />
+                <span class="logoTxt">Automatic Text Summarizer</span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+
+<!-- +++++ Projects Section +++++ -->
+
+<div class="container pt">
+    <div class="row topRow">
+        <div class="col-md-6 col-xs-12">
+            <h4 class="topRowHeading">Summarize your text</h4>
+        </div>
+        <div class="col-md-6 col-xs-12 text-right">
+            <label class="inline sizeElements" style="padding-right: 15px;">Size</label>
+            <label class="radio-inline sizeElements">
+                <input type="radio" name="summarySize" checked="" value="small">Small 
+            </label>
+            <label class="radio-inline sizeElements">
+               <input type="radio" name="summarySize" value="smaller">Smaller
+            </label>
+            <label class="inline methodLabel">Method</label>
+            <select name="method" id="methodInput" class="form-control methodInput">
+                <option selected="selected" value="0">Word Frequency</option>
+                <option value="1">TF-IDF Frequency</option>
+                <!-- <option value="2">T5 Transformer</option> -->
+            </select>
+        </div>
+    </div>
+    <div class="row summaryContent">
+        <div class="col-md-6 leftColumn">
+            <form role="form" id="inputForm">
+                <div class="flexCol">
+                    <div class="row flex1">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <textarea class="form-control inputStr" id="inputStr"
+                                       placeholder="Paste or write sentence(s) to summarize"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row btnsRow">
+                        <div class="col-xs-4">
+                            <div class="wordCount" id="textWordCountDiv">
+                                <span>Word Count: </span><span class="count" id="textWordCount">0</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="form-group text-right">
+                                <input type="button" id="btnSubmit" value="Summarize" class="btn btn-info"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6 rightColumn">
+            <div class="flexCol">
+                <div id="summary" class="flex1">
+                    <!-- +++++ Summary output will be displayed here +++++ -->
+                </div>
+                <div id="loadingDiv" class="loadingDiv flex1">
+                    <div class="loadingGif">
+                        <img class="loadingImg" title="Loading..." src="{{ url_for('static', filename = 'assets/images/loading.gif') }}" />
+                    </div>
+                    <div class="loadingText">Processing...</div>
+                </div>
+                <div class="wordCount" id="summaryWordCountDiv">
+                    <span>Word Count: </span><span class="count" id="summaryWordCount">0</span>
+                </div>
+            </div>
+        </div>
+    </div><!-- /row -->
+</div><!-- /container -->
+
+
+<!-- +++++ Footer Section +++++ -->
+
+
+<div id="footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-3">
+                <h4>About Us</h4>
+                <p><a href="#">Awais Ahmed (Supervisor)</a><br/></p>
+                <p><a href="#">Asadullah Khan</a><br/></p>
+            </div><!-- /col-lg-3 -->
+
+            <div class="col-lg-3">
+                <h4>Contact</h4>
+                <p><a href="https://www.linkedin.com/in/asadullahkr/" target="_blank">LinkedIn</a><br/></p>
+                <p><a href="#">Email</a><br/></p>
+            </div><!-- /col-lg-4 -->
+
+            <div class="col-lg-6">
+                <h4>About the project</h4>
+                <p>This is an educational research project that demonstrate the usage of the 
+                    <a href="https://www.nltk.org" target="_blank">NLTK</a> (for NLP) and 
+                    <a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank">Flask</a> 
+                    (for webservice), Developed by <b>Asadullah Khan</b> under supervision of <b>Awais Ahmed</b></p>
+            </div><!-- /col-lg-4 -->
+
+        </div>
+    </div>
+</div>
+
+<div id="copyrights">
+    <div class="container">
+        <p>
+            &copy; Copyrights <strong>Stanley</strong>. All Rights Reserved
+        </p>
+        <div class="credits">
+            <!--
+              You are NOT allowed to delete the credit link to TemplateMag with free version.
+              You can delete the credit link only if you bought the pro version.
+              Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/stanley-bootstrap-freelancer-template/
+              Licensing information: https://templatemag.com/license/
+            -->
+            Created with Stanley template by <a href="https://templatemag.com/">TemplateMag</a>
+        </div>
+    </div>
+</div>
+<!-- / copyrights -->
+
+<!-- Bootstrap core JavaScript
+  ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ url_for('static', filename = 'assets/js/bootstrap.min.js') }}"></script>
+<script>var baseUrl = "{{ base_url|safe }}";</script>
+<script src="{{ url_for('static', filename = 'assets/js/main.js') }}"></script>
+
+</body>
+
+</html>
